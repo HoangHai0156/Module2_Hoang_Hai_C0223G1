@@ -18,9 +18,10 @@ public class DeleteValueInArray {
                 flag = true;
             }
         }
-        if(flag = false){
+        if(flag == false){
             System.out.println("So vua nhap khong co trong mang");
+        }else {
+            System.out.println("Mang sau khi xoa la " + Arrays.toString(Numbers));
         }
-        System.out.println("Mang sau khi xoa la "+ Arrays.toString(Numbers));
     }
 }
