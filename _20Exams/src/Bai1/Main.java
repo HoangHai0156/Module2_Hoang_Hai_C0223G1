@@ -8,7 +8,7 @@ public class Main {
         int x = 10;
         int[] numbers = new int[x];
         for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = (int) (Math.random() * 1000);
+            numbers[i] = (int) ((Math.random() * 1000) + Math.random() * (-1000));
         }
         System.out.println(Arrays.toString(numbers));
         for (int value : numbers) {
