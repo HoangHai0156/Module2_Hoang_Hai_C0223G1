@@ -11,11 +11,11 @@ public class Main {
             numbers[i] = (int) (Math.random() * 100);
         }
         System.out.println(Arrays.toString(numbers));
-        interchangeSortOdd(numbers);
+        selectorSortOdd(numbers);
         System.out.println(Arrays.toString(numbers));
     }
 
-    public static void interchangeSortOdd(int[] numbers) {
+    public static void selectorSortOdd(int[] numbers) {
         for (int i = 0; i < numbers.length - 1; i++) {
             if (numbers[i] % 2 != 0) {
                 int minIndex = i;

@@ -15,7 +15,7 @@ public class Main {
             String num = Integer.toString(value);
             boolean flag = true;
             for (int j = 0; j < num.length(); j++) {
-                if (Integer.parseInt(String.valueOf(num.charAt(j))) % 2 == 0) {
+                if (num.charAt(j) % 2 == 0) {
                     flag = false;
                 }
             }
