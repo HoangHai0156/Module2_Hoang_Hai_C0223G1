@@ -5,19 +5,21 @@ import java.util.Arrays;
 //Bài 11: Thêm x vào trong mảng tăng nhưng vẫn giữ nguyên tính tăng của mảng
 public class Main {
     public static void main(String[] args) {
-        int[] numbers = {1, 2, 12, 16, 18, 20, 27, 40, 46, 48};
+        int[] numbers = {1, 2, 12, 16, 18, 18, 20, 27, 40, 46, 48,48};
         System.out.println(Arrays.toString(numbers));
-        numbers = insertElementToAscending(19,numbers);
+        numbers = insertElementToAscending(48,numbers);
         System.out.println(Arrays.toString(numbers));
     }
 
     public static int[] insertElementToAscending(int element, int[] numbers) {
-        int index = 0;
+        int index=0;
         if (element > numbers[numbers.length - 1]) {
             index = numbers.length - 1;
+        } else if (element < numbers[0]) {
+            index = 0;
         } else {
             for (int i = 1; i < numbers.length - 1; i++) {
-                if (element > numbers[i - 1] && element < numbers[i]) {
+                if (element >= numbers[i - 1] && element <= numbers[i]) {
                     index = i;
                     break;
                 }
