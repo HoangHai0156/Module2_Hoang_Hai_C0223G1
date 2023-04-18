@@ -14,9 +14,10 @@ public class Square extends Rectangle{
         return getWidth();
     }
     public void setSide(double side){
-        setWidth(side);
-        setLength(side);
+        super.setWidth(side);
+        super.setLength(side);
     }
+    @Override
     public void setWidth(double side){
         setSide(side);
     }
@@ -38,5 +39,8 @@ public class Square extends Rectangle{
 
         Square square2 = new Square(3.5,"Walnut",false);
         System.out.println(square2);
+
+        square1.setWidth(20);
+        System.out.println(square1);
     }
 }
