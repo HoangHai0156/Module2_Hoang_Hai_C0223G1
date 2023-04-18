@@ -90,11 +90,9 @@ public class Triangle extends Shape {
         do {
             System.out.println("Ban co muon tam giac do filled khong? (y/n)");
             confirm = scanner.nextLine();
-        } while (!confirm.toLowerCase().equals("y") && !confirm.toLowerCase().equals("n"));
-        boolean filled = false;
-        if(confirm.toLowerCase().equals("y")){
-            filled = true;
-        }
+        } while (!confirm.equalsIgnoreCase("y") && !confirm.equalsIgnoreCase("n"));
+
+        boolean filled = confirm.equalsIgnoreCase("y");
 
         Triangle triangle1 = new Triangle(color,filled,side1,side2,side3);
         System.out.printf(triangle1.toString());
