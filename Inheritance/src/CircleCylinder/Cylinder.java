@@ -31,6 +31,8 @@ public class Cylinder extends Circle {
     public static void main(String[] args) {
         Cylinder cylinder = new Cylinder();
         System.out.println(cylinder);
-        System.out.println(cylinder.getRadius());;
+        System.out.println(cylinder.getRadius());
+
+        Circle cylinder2 = new Cylinder(2,3,"Ivory");
     }
 }
