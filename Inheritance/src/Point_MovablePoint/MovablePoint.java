@@ -54,8 +54,7 @@ public class MovablePoint extends Point {
         float y = getY();
         x += getxSpeed();
         y += getySpeed();
-        setX(x);
-        setY(y);
+        setXY(x,y);
         return this; // Trả về đối tượng đang gọi phương thức move() với x,y mới được cộng dồn speed.
     }
 
