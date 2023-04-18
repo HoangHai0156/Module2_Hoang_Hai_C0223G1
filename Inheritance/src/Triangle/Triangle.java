@@ -68,18 +68,23 @@ public class Triangle extends Shape {
 //        System.out.printf(triangle.toString());
         Scanner scanner = new Scanner(System.in);
         System.out.println("Hay tao mot tam giac");
-        System.out.println("Nhap vao chieu dai canh 1");
-        double side1 = scanner.nextDouble();
 
-        System.out.println("Nhap vao chieu dai canh 2");
-        double side2 = scanner.nextDouble();
+        double side1 = 0, side2 = 0, side3 = 0;
+        do {
+            System.out.println("Nhap vao chieu dai canh 1");
+            side1 = scanner.nextDouble();
+        } while (side1 <= 0);
 
-        double side3 = 0;
+        do {
+            System.out.println("Nhap vao chieu dai canh 2");
+            side2 = scanner.nextDouble();
+        } while (side2 <= 0);
+
         do {
             System.out.println("Nhap vao chieu dai canh 3");
             side3 = scanner.nextDouble();
             scanner.nextLine();
-        } while ((side1 + side2) <= side3);
+        } while ((side1 + side2) <= side3 || (side1 + side3) <= side2 || (side3 + side2) <= side1);
 
         System.out.println("Nhap vao mau cua tam giac");
         String color = scanner.nextLine();
@@ -92,7 +97,7 @@ public class Triangle extends Shape {
 
         boolean filled = confirm.equalsIgnoreCase("y");
 
-        Triangle triangle1 = new Triangle(color,filled,side1,side2,side3);
+        Triangle triangle1 = new Triangle(color, filled, side1, side2, side3);
         System.out.printf(triangle1.toString());
     }
 }
