@@ -70,11 +70,9 @@ public class Triangle extends Shape {
         System.out.println("Hay tao mot tam giac");
         System.out.println("Nhap vao chieu dai canh 1");
         double side1 = scanner.nextDouble();
-        scanner.nextLine();
 
         System.out.println("Nhap vao chieu dai canh 2");
         double side2 = scanner.nextDouble();
-        scanner.nextLine();
 
         double side3 = 0;
         do {
