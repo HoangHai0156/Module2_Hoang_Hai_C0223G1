@@ -1,5 +1,7 @@
 package Triangle;
 
+import java.util.Scanner;
+
 public class Triangle extends Shape {
     private double side1 = 1;
     private double side2 = 1;
@@ -62,7 +64,39 @@ public class Triangle extends Shape {
     }
 
     public static void main(String[] args) {
-        Triangle triangle = new Triangle(2, 3, 4);
-        System.out.printf(triangle.toString());
+//        Triangle triangle = new Triangle(2, 3, 4);
+//        System.out.printf(triangle.toString());
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Hay tao mot tam giac");
+        System.out.println("Nhap vao chieu dai canh 1");
+        double side1 = scanner.nextDouble();
+        scanner.nextLine();
+
+        System.out.println("Nhap vao chieu dai canh 2");
+        double side2 = scanner.nextDouble();
+        scanner.nextLine();
+
+        double side3 = 0;
+        do {
+            System.out.println("Nhap vao chieu dai canh 3");
+            side3 = scanner.nextDouble();
+            scanner.nextLine();
+        } while ((side1 + side2) <= side3);
+
+        System.out.println("Nhap vao mau cua tam giac");
+        String color = scanner.nextLine();
+
+        String confirm;
+        do {
+            System.out.println("Ban co muon tam giac do filled khong? (y/n)");
+            confirm = scanner.nextLine();
+        } while (!confirm.toLowerCase().equals("y") && !confirm.toLowerCase().equals("n"));
+        boolean filled = false;
+        if(confirm.toLowerCase().equals("y")){
+            filled = true;
+        }
+
+        Triangle triangle1 = new Triangle(color,filled,side1,side2,side3);
+        System.out.printf(triangle1.toString());
     }
 }
