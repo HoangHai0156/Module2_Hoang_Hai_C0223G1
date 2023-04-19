@@ -13,7 +13,7 @@ public class ComparatorTest {
         Circle[] circles = new Circle[3];
         circles[0] = new Circle();
         circles[1] = new Circle(7.5,"Beige",true);
-        circles[2] = new Circle(0.5); // không sort được do không tìm thấy interface comparable;
+        circles[2] = new Circle(0.5);
 
         System.out.println("Pre-sorted: ");
         for(Circle circle: circles){
