@@ -8,8 +8,8 @@ class FizzBuzzTranslateTest {
 
     @Test
     void translate() {
-        int number = -3;
-        String expected = "số không hợp lệ";
+        int number = 277;
+        String expected = "277";
         String actual = FizzBuzzTranslate.translate(number);
         assertEquals(expected,actual);
     }
