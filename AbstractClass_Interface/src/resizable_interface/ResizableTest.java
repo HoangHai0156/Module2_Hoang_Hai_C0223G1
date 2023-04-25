@@ -61,9 +61,7 @@ public class ResizableTest {
 
     public static Shape[] addShape(Shape[] shapes, Shape shape) {
         Shape[] newShapes = new Shape[shapes.length + 1];
-        for (int i = 0; i< shapes.length; i++){
-            newShapes[i] = shapes[i];
-        }
+        System.arraycopy(shapes, 0, newShapes, 0, shapes.length);
         newShapes[shapes.length] = shape;
         return newShapes;
     }
