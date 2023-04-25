@@ -12,12 +12,15 @@ public class QueueClient {
         myArrayQueue.enqueue(46);
         myArrayQueue.enqueue(47);
         myArrayQueue.enqueue(48);
+
         System.out.println(myArrayQueue.isQueueFull());
         myArrayQueue.enqueue(49);
+
         myArrayQueue.dequeue();
         myArrayQueue.dequeue();
         myArrayQueue.dequeue();
         myArrayQueue.dequeue();
+
         System.out.println(myArrayQueue.isQueueEmpty());
         myArrayQueue.dequeue();
     }
