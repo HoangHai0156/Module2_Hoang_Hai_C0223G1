@@ -1,6 +1,7 @@
 package resizable_interface;
 
-public abstract class Shape {
+public abstract class Shape implements Resizable {
+    private final String name = "Shape";
     private String color = "green";
     private boolean filled = true;
 
@@ -10,6 +11,10 @@ public abstract class Shape {
     public Shape(String color, boolean filled) {
         this.color = color;
         this.filled = filled;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getColor() {
@@ -32,7 +37,11 @@ public abstract class Shape {
 
     public abstract double getPerimeter();
 
+    @Override
     public String toString() {
-        return String.format("A Shape with color of %s and %s", this.color, this.filled ? "filled" : "not filled");
+        return "Shape{" +
+                "color='" + color + '\'' +
+                ", filled=" + filled +
+                '}';
     }
 }

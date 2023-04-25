@@ -1,7 +1,12 @@
 package resizable_interface;
 
-public class Circle extends Shape implements Resizable{
+public class Circle extends Shape {
     private double radius = 1;
+    private final String name = "Circle";
+
+    public String getName() {
+        return name;
+    }
 
     public Circle() {
     }
@@ -33,14 +38,15 @@ public class Circle extends Shape implements Resizable{
 
     @Override
     public void resize(double percent) {
-        double radius = getRadius();
         radius += radius*percent;
-        setRadius(radius);
     }
 
     @Override
     public String toString() {
-        return String.format("A Circle with radius=%.2f, which is a subclass of %s", radius, super.toString());
+        return "Circle{" +
+                "radius=" + radius +
+                '}'+" of " +
+                super.toString();
     }
 
     public static void main(String[] args) {

@@ -1,8 +1,13 @@
 package resizable_interface;
 
-public class Rectangle extends Shape implements Resizable{
+public class Rectangle extends Shape {
     private double width = 1;
     private double length = 1;
+    private final String name = "Rectangle";
+
+    public String getName() {
+        return name;
+    }
 
     public Rectangle() {
     }
@@ -44,17 +49,17 @@ public class Rectangle extends Shape implements Resizable{
 
     @Override
     public void resize(double percent) {
-        double width = getWidth();
         width += width*percent;
-        double length = getLength();
         length += length*percent;
-        setWidth(width);
-        setLength(length);
     }
 
     @Override
     public String toString() {
-        return String.format("A Rectangle with width=%.2f and length=%.2f, which is a subclass of %s", width, length, super.toString());
+        return "Rectangle{" +
+                "width=" + width +
+                ", length=" + length +
+                '}'+" of " +
+                super.toString();
     }
 
     public static void main(String[] args) {

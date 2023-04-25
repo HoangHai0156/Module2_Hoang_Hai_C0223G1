@@ -1,6 +1,12 @@
 package resizable_interface;
 
 public class Square extends Shape implements Resizable{
+    private final String name = "Square";
+
+    public String getName() {
+        return name;
+    }
+
     private double side = 1;
 
     public Square(){}
@@ -9,7 +15,7 @@ public class Square extends Shape implements Resizable{
         this.side = side;
     }
 
-    public Square(String color, boolean filled, double side) {
+    public Square(double side, String color, boolean filled) {
         super(color, filled);
         this.side = side;
     }
@@ -32,13 +38,14 @@ public class Square extends Shape implements Resizable{
 
     @Override
     public void resize(double percent) {
-        double side = getSide();
         side += side*percent;
-        setSide(side);
     }
 
     @Override
     public String toString() {
-        return String.format("A Square with side=%.2f, which is a subclass of %s", getSide(), super.toString());
+        return "Square{" +
+                "side=" + side +
+                '}'+" of " +
+                super.toString();
     }
 }
