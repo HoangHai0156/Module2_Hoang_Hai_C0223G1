@@ -7,7 +7,7 @@ import java.util.Stack;
 
 public class PalindromeCheck {
     public static void main(String[] args) {
-        String str = "Java is a language"; // Rats Deified Star
+        String str = "Rats Deified Star"; // Rats Deified Star
         String str1 = str.toLowerCase();
         Queue<Character> queue = new LinkedList<>();
         Stack<Character> stack = new Stack<>();
