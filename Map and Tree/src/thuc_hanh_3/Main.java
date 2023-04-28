@@ -16,6 +16,7 @@ public class Main {
         studentList.add(student1);
         studentList.add(student2);
         studentList.add(student3);
+
         Collections.sort(studentList);
         for (Student student4: studentList){
             System.out.println(student4);
