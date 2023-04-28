@@ -4,6 +4,8 @@ import java.util.*;
 
 public class ProductManager {
     public static Scanner scanner = new Scanner(System.in);
+    public static String maudo = "\033[31m";
+    public static String mauden = "\033[30m";
 
     public static void main(String[] args) {
         ArrayList<Product> products = new ArrayList<>();
@@ -65,18 +67,18 @@ public class ProductManager {
 
 
     public static void showMenu() {
-        System.out.println("=======================================================");
-        System.out.println("|                      THICK MENU                     |");
-        System.out.println("=======================================================");
-        System.out.println("| Options:                                            |");
-        System.out.println("| 1. Thêm sản phẩm                                    |");
-        System.out.println("| 2. Sửa thông tin sản phẩm theo id                   |");
-        System.out.println("| 3. Xoá sản phẩm theo id                             |");
-        System.out.println("| 4. Hiển thị danh sách sản phẩm                      |");
-        System.out.println("| 5. Tìm kiếm sản phẩm theo tên                       |");
-        System.out.println("| 6. Sắp xếp sản phẩm tăng dần, giảm dần theo giá     |");
-        System.out.println("| 0. Quit                                             |");
-        System.out.println("=======================================================");
+        System.out.println("╔═════════════════════════════════════════════════════╗");
+        System.out.println("║                      THICK MENU                     ║");
+        System.out.println("╠═════════════════════════════════════════════════════╣");
+        System.out.println("║ Options:                                            ║");
+        System.out.println("║ ▶ 1. Thêm sản phẩm                                  ║");
+        System.out.println("║ ▶ 2. Sửa thông tin sản phẩm theo id                 ║");
+        System.out.println("║ ▶ 3. Xoá sản phẩm theo id                           ║");
+        System.out.println("║ ▶ 4. Hiển thị danh sách sản phẩm                    ║");
+        System.out.println("║ ▶ 5. Tìm kiếm sản phẩm theo tên                     ║");
+        System.out.println("║ ▶ 6. Sắp xếp sản phẩm tăng dần, giảm dần theo giá   ║");
+        System.out.println("║"+ maudo +" ▶ 0. Quit"+mauden+"                                           ║");
+        System.out.println("╚═════════════════════════════════════════════════════╝");
     }
 
     public static Product createProduct(ArrayList<Product> products) {
@@ -100,15 +102,15 @@ public class ProductManager {
 
         while (flag) {
             do {
-                System.out.println("=======================================================");
-                System.out.println("|                      THICK MENU                     |");
-                System.out.println("=======================================================");
-                System.out.println("| Options:                                            |");
-                System.out.println("| 1. Sửa tên sản phẩm                                 |");
-                System.out.println("| 2. Sửa giá sản phẩm                                 |");
-                System.out.println("| 3. Sửa ID sản phẩm                                  |");
-                System.out.println("| 0. Quit                                             |");
-                System.out.println("=======================================================");
+                System.out.println("╔═════════════════════════════════════════════════════╗");
+                System.out.println("║                      THICK MENU                     ║");
+                System.out.println("╠═════════════════════════════════════════════════════╣");
+                System.out.println("║ Options:                                            ║");
+                System.out.println("║ ▶ 1. Sửa tên sản phẩm                               ║");
+                System.out.println("║ ▶ 2. Sửa giá sản phẩm                               ║");
+                System.out.println("║ ▶ 3. Sửa ID sản phẩm                                ║");
+                System.out.println("║"+ maudo +" ▶ 0. Quit"+mauden+"                                           ║");
+                System.out.println("╚═════════════════════════════════════════════════════╝");
 
                 action = Integer.parseInt(scanner.nextLine());
             } while (action < 0 || action > 3);
@@ -171,14 +173,14 @@ public class ProductManager {
 
         while (flag) {
             do {
-                System.out.println("=======================================================");
-                System.out.println("|                      THICK MENU                     |");
-                System.out.println("=======================================================");
-                System.out.println("| Options:                                            |");
-                System.out.println("| 1. Sắp xếp sản phẩm tăng dần theo giá               |");
-                System.out.println("| 2. Sắp xếp sản phẩm giảm dần theo giá               |");
-                System.out.println("| 0. Quit                                             |");
-                System.out.println("=======================================================");
+                System.out.println("╔═════════════════════════════════════════════════════╗");
+                System.out.println("║                      THICK MENU                     ║");
+                System.out.println("╠═════════════════════════════════════════════════════╣");
+                System.out.println("║ Options:                                            ║");
+                System.out.println("║ ▶ 1. Sắp xếp sản phẩm tăng dần theo giá             ║");
+                System.out.println("║ ▶ 2. Sắp xếp sản phẩm giảm dần theo giá             ║");
+                System.out.println("║"+ maudo +" ▶ 0. Quit"+mauden+"                                           ║");
+                System.out.println("╚═════════════════════════════════════════════════════╝");
 
                 action = Integer.parseInt(scanner.nextLine());
             } while (action < 0 || action > 2);
@@ -186,6 +188,7 @@ public class ProductManager {
                 case 1 -> {
                     PriceComparator ascendingComparator = new PriceComparator(true);
                     products.sort(ascendingComparator);
+                    // Collections.sort(products,comparator);
                     System.out.println("Sau khi sắp xếp: ");
                     showProducts(products);
                 }
